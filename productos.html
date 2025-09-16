@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Mascotas - Productos</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <h1>Tienda de Mascotas</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <aside class="filtros">
+      <h3>Filtros</h3>
+      <form>
+        <label>Tipo de animal:</label><br>
+        <input type="radio" name="animal" value="perro"> Perro<br>
+        <input type="radio" name="animal" value="gato"> Gato<br><br>
+
+        <label>Tamaño:</label><br>
+        <input type="radio" name="tamano" value="pequeño"> Pequeño<br>
+        <input type="radio" name="tamano" value="mediano"> Mediano<br>
+        <input type="radio" name="tamano" value="grande"> Grande<br><br>
+
+        <label>Edad:</label><br>
+        <input type="radio" name="edad" value="cachorro"> Cachorro<br>
+        <input type="radio" name="edad" value="joven"> Joven<br>
+        <input type="radio" name="edad" value="adulto"> Adulto<br>
+        <input type="radio" name="edad" value="adulto-mayor"> Adulto mayor<br><br>
+
+        <label>Tipo de producto:</label><br>
+        <input type="radio" name="tipo" value="alimento"> Alimento<br>
+        <input type="radio" name="tipo" value="accesorios"> Accesorios<br>
+        <input type="radio" name="tipo" value="juguetes"> Juguetes<br><br>
+
+        <button type="submit">Filtrar</button>
+        <button type="reset">Borrar</button>
+      </form>
+    </aside>
+
+    <section class="resultados">
+      <h2>Resultados de la búsqueda</h2>
+      <div class="grid-productos">
+        <article class="producto">Producto A</article>
+        <article class="producto">Producto B</article>
+        <article class="producto">Producto C</article>
+        <article class="producto">Producto D</article>
+        <article class="producto">Producto E</article>
+        <article class="producto">Producto F</article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-redes">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://wa.me/XXXXXXXXXX" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
+
+</body>
+</html>
