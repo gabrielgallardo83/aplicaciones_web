@@ -95,3 +95,55 @@ footer .footer-redes a{
     gap: 2rem;
     padding: 2rem;
 }
+
+.grid-ofertas .producto{
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.8rem;
+    text-align: center;
+
+}
+
+.grid-ofertas .producto:hover {
+    transform: scale(1.05);
+}
+
+.home-main {
+    padding: 2rem;
+}
+
+.productos-main {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: flex-start;
+}
+
+productos.main aside.filtros {
+    width: 20%;
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.8rem;
+}
+
+.productos-main section.resultados {
+    flex: 1;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.grid-productos .producto{
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.8rem;
+    text-align: center;
+}
+
