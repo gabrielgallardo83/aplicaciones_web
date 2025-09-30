@@ -35,29 +35,41 @@
     <aside class="filtros">
       <h3>Filtros</h3>
       <form>
-        <label>Tipo de animal:</label><br>
-        <input type="radio" name="animal" value="perro"> Perro<br>
-        <input type="radio" name="animal" value="gato"> Gato<br><br>
+      <!-- Tipo de animal -->
+      <select name="animal">
+        <option value="">Tipo de animal</option>
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+      </select>
 
-        <label>Tamaño:</label><br>
-        <input type="radio" name="tamano" value="pequeño"> Pequeño<br>
-        <input type="radio" name="tamano" value="mediano"> Mediano<br>
-        <input type="radio" name="tamano" value="grande"> Grande<br><br>
+      <!-- Tamaño -->
+      <select name="tamano">
+        <option value="">Tamaño</option>
+        <option value="pequeno">Pequeño</option>
+        <option value="mediano">Mediano</option>
+        <option value="grande">Grande</option>
+      </select>
 
-        <label>Edad:</label><br>
-        <input type="radio" name="edad" value="cachorro"> Cachorro<br>
-        <input type="radio" name="edad" value="joven"> Joven<br>
-        <input type="radio" name="edad" value="adulto"> Adulto<br>
-        <input type="radio" name="edad" value="adulto-mayor"> Adulto mayor<br><br>
+      <!-- Edad -->
+      <select name="edad">
+        <option value="">Edad</option>
+        <option value="cachorro">Cachorro</option>
+        <option value="adulto">Adulto</option>
+        <option value="adulto-mayor">Adulto mayor</option>
+      </select>
 
-        <label>Tipo de producto:</label><br>
-        <input type="radio" name="tipo" value="alimento"> Alimento<br>
-        <input type="radio" name="tipo" value="accesorios"> Accesorios<br>
-        <input type="radio" name="tipo" value="juguetes"> Juguetes<br><br>
+      <!-- Tipo de producto -->
+      <select name="tipo">
+        <option value="">Tipo de producto</option>
+        <option value="alimento">Alimento</option>
+        <option value="accesorios">Accesorios</option>
+        <option value="juguetes">Juguetes</option>
+      </select>
 
-        <button type="submit">Filtrar</button>
-        <button type="reset">Borrar</button>
-      </form>
+      <!-- Botones -->
+      <button type="submit">Filtrar</button>
+      <button type="reset">Borrar</button>
+    </form>
     </aside>
 
     <section class="resultados">
