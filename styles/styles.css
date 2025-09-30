@@ -303,14 +303,21 @@ aside {
     background: #023e8a;
 }
 
+.producto-main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* 1/4 - 2/4 - 1/4 */
+  padding: 2rem;
+}
+
 .producto-detalle {
-    display: flex;
-    gap: 3rem;
-    padding: 3rem;
-    background: #fff;
-    border-radius: 0.8rem;
-    margin: 2rem;
-    border: 1px solid #ddd;
+    grid-column: 2 / 3; /* ocupa la columna central */
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: flex;
+  gap: 2rem;
+  align-items: start;
 }
 
 .producto-detalle img{
@@ -320,6 +327,7 @@ aside {
 
 .producto-info{
     flex: 1;
+
 }
 
 .producto-info h2 {
@@ -328,6 +336,7 @@ aside {
 }
 
 .producto-info p {
+    font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 
