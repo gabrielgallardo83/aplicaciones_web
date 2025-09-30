@@ -402,6 +402,49 @@ aside {
     background: #023e8a;
 }
 
+.mensaje-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.mensaje-centro {
+  text-align: center;
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.mensaje-centro h2 {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.mensaje-centro p {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: #0077b6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.6rem;
+  transition: background 0.2s;
+}
+
+.btn-volver:hover {
+  background: #023e8a;
+}
 
 
 .carrito-main {
