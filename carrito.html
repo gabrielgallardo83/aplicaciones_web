@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Carrito de Compras</title>
 </head>
 <body>
@@ -16,6 +17,7 @@
     <h1>Tienda de Mascotas</h1>
   </a>
 </div>
+
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -42,26 +44,37 @@
           <th>Cantidad</th>
           <th>Precio unitario</th>
           <th>Subtotal</th>
+          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            <img src="images/producto1.jpg" alt="Producto 1" class="carrito-img">
+            <img src="img/alimento_adulto_mayor_mediano.png" alt="Producto 1" class="carrito-img">
             <span>Producto 1</span>
           </td>
           <td><input type="number" value="1" min="1"></td>
           <td>$1200</td>
           <td>$1200</td>
+          <td>
+          <button class="btn-eliminar">
+            <span class="material-symbols-outlined">delete</span>
+          </button>
+        </td>
         </tr>
         <tr>
           <td>
-            <img src="images/producto2.jpg" alt="Producto 2" class="carrito-img">
+            <img src="img/alimento_adulto_mediano.png" alt="Producto 2" class="carrito-img">
             <span>Producto 2</span>
           </td>
           <td><input type="number" value="2" min="1"></td>
           <td>$950</td>
           <td>$1900</td>
+          <td>
+          <button class="btn-eliminar">
+            <span class="material-symbols-outlined">delete</span>
+          </button>
+        </td>
         </tr>
       </tbody>
     </table>
@@ -100,12 +113,13 @@
 
         <button type="submit" class="btn-pagar">Pagar</button>
       </form>
+      <a href="productos.html" class="btn-volver">Volver</a>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-menu">
+  <div class="footer-menu">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
@@ -113,9 +127,15 @@
       </ul>
     </div>
     <div class="footer-redes">
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://wa.me/XXXXXXXXXX" target="_blank">WhatsApp</a>
+      <a href="https://facebook.com" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+<a href="https://instagram.com" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+<a href="https://wa.me/XXXXXXXXXX" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
     </div>
   </footer>
 

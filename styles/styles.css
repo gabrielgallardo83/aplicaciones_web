@@ -92,6 +92,7 @@ footer .footer-menu ul {
 
 footer .footer-menu a{
     color: #fff;
+    font-size: 1.5rem;
 }
 
 footer .footer-menu a:hover{
@@ -99,10 +100,23 @@ footer .footer-menu a:hover{
 }
 
 footer .footer-redes a{
-    margin-left: 1rem;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+ margin-left: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+   font-size: 2.4rem;
+padding: 0.5rem;
+}
+
+.footer-redes a:hover {
+  color: #90e0ef;
+}
+
+.footer-redes .material-symbols-outlined {
+  font-size: 2.4rem;
 }
 
 /*.grid-ofertas {
@@ -164,6 +178,12 @@ footer .footer-redes a{
   margin-bottom: 0.5rem;
   color: #555;
 }
+.grid-ofertas .producto-info .precio-tachado {
+  text-decoration: line-through;
+    font-weight: bold;
+  color: #0077b6;
+  font-size: 1.6rem;
+}
 
 .grid-ofertas .producto-info .precio {
   font-weight: bold;
@@ -193,7 +213,7 @@ aside {
     width: 100%;
     background: #f9f9f9;
     padding: 1.5rem;
-    margin-top: 5rem;
+    margin-top: 6rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
     border-radius: 0.8rem;
@@ -223,6 +243,10 @@ aside {
 .filtros button {
   padding: 0.5rem;
 
+}
+
+.resultados h2{
+    font-size: 2.5rem;
 }
 
 .grid-productos {
@@ -565,7 +589,34 @@ aside {
   background: #023e8a;
 }
 
-@media (max-width: 992px) {
+td .btn-eliminar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* opcional */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 2rem;
+  transition: transform 0.2s;
+}
+
+td .btn-eliminar:hover {
+  transform: scale(1.2);
+  color: #e60000;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 3rem;
+  color: #fff;
+}
+
+
+
+@media (max-width: 1024px) {
  
   nav ul {
     display: none; 
@@ -657,57 +708,57 @@ header .logo h1{
 
 
  
-  .productos-main {
+   .productos-main {
+    display: flex;
     flex-direction: column;
-  }
-
-  aside {
-    display: block;
-    width: 100%;
-    background: #f9f9f9;
     padding: 1rem;
-    border-radius: 8px;
+  }
+
+  /* Filtros en horizontal */
+  .filtros {
+    display: flex;
+    flex-direction: row; /* horizontal */
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1rem;
-  }
-
-  aside label {
-    display: none; 
-  }
-
-  aside select {
-    display: block;
     width: 100%;
-    margin-bottom: 0.8rem;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
   }
 
-  aside button {
-    width: 100%; 
-    padding: 0.6rem;
-    margin-top: 0.5rem;
-    background: #0077b6;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+  .filtros form {
+    display: flex;
+    flex-direction: row; /* elementos del formulario en fila */
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
   }
 
-  aside button:hover {
-    background: #448dec;
+  .filtros select,
+  .filtros button {
+    flex: 1 1 auto; /* que cada elemento se ajuste */
+    min-width: 8rem;
   }
 
-
+  /* Buscador debajo de los filtros */
   .buscador {
     width: 100%;
-    max-width: 100%;
     margin-bottom: 1rem;
   }
 
-
-  .productos-resultados {
-    grid-template-columns: 1fr;
+  /* Resultados debajo de los filtros */
+  .productos-resultados,
+  .grid-productos {
+    grid-template-columns: 1fr; /* grilla de una columna */
+    gap: 1rem;
   }
+
+  footer .footer-menu a{
+    
+    font-size: 1rem;
+}
+
+footer .footer-redes a{
+ 
+   font-size: 1.5rem;
+
+}
 }
