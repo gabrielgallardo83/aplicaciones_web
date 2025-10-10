@@ -728,7 +728,7 @@ header .logo h1{
  
   .productos-resultados,
   .grid-productos {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;  
     gap: 1rem;
   }
 
