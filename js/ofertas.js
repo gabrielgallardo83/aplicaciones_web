@@ -1,106 +1,105 @@
 document.addEventListener("DOMContentLoaded", () => {
-const productos = [
+const ofertas = [
 {
-    nombre:"alimento_adulto_mayor_medianos_grandes",
+    nombre:"alimento_adulto_mayor_mediano",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1200",
-    imagen: "img/alimento_adulto_mayor_medianos_grandes.png",
+    precioAnterior: "1200",
+    precioActual:"600",
+    imagen: "img/alimento_adulto_mayor_mediano.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro",
-  
-    
+    tipo: "alimento_perro"
 },
 
 {
     nombre:"alimento_adulto_todostamaños",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "950",
+    precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_adulto_todostamaños.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 {
     nombre:"alimento_cachorro_mediano_grande",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1500",
+    precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_cachorro_mediano_grande.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 {
     nombre:"alimento_cachorro_pequeño",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1500",
+    precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_cachorro_pequeño.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 {
     nombre:"alimento_cachorro_todostamaños",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1500",
+    precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_cachorro_todostamaños.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 {
     nombre:"alimento_adulto_mayor_pequeño",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1200",
+    precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_adulto_mayor_pequeño.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 {
     nombre:"alimento_cachorro_grande",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1200",
+   precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_cachorro_grande.jpg",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 {
     nombre:"alimento_adulto_mayor_mediano",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1200",
+   precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_adulto_mayor_mediano.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 {
     nombre:"alimento_adulto_mediano",
     descripcion: "Alimento rico en proteína animal de alto valor biológico, contiene minerales como calcio, fósforo, potasio y hierro, vitaminas A, D y E.",
-    precio: "1200",
+   precioAnterior: "1200",
+    precioActual:"600",
     imagen: "img/alimento_adulto_mediano.png",
     enlace:"producto.html",
-    tipo: "alimento",
-    animal:"perro"
+    tipo: "alimento_perro"
 },
 
 
 ];
 
-const contenedor = document.getElementById("productos-container")
+const contenedor = document.getElementById("ofertas-container")
 
-productos.forEach(producto => {
+ofertas.forEach(oferta => {
     const card = document.createElement("a");
-    card.href = producto.enlace;
+    card.href = oferta.enlace;
 
     card.innerHTML= `
       <article class="producto">
-          <img src="${producto.imagen}" alt="${producto.nombre}">
+          <img src="${oferta.imagen}" alt="${oferta.nombre}">
           <div class="producto-info">
-            <h3>${producto.nombre}</h3>
-            <p>${producto.descripcion}</p>
-            <span class="precio">$${producto.precio}</span>
+            <h3>${oferta.nombre}</h3>
+            <p>${oferta.descripcion}</p>
+            <span class="precio-tachado">$${oferta.precioAnterior}</span><br>
+          <span class="precio">$${oferta.precioActual}</span>
           </div>
       </article>
     `;
