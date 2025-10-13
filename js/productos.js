@@ -108,4 +108,6 @@ productos.forEach(producto => {
     contenedor.appendChild(card)
 })
 
+
+
 })

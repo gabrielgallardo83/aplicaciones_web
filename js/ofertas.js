@@ -7,7 +7,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_adulto_mayor_mediano.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+    tipo: "alimento",
+    animal:"perro",
 },
 
 {
@@ -17,7 +18,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_adulto_todostamaños.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+    tipo: "alimento",
+    animal:"perro",
 },
 {
     nombre:"alimento_cachorro_mediano_grande",
@@ -26,7 +28,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_cachorro_mediano_grande.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+    tipo: "alimento",
+    animal:"perro",
 },
 {
     nombre:"alimento_cachorro_pequeño",
@@ -35,7 +38,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_cachorro_pequeño.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+   tipo: "alimento",
+    animal:"perro",
 },
 {
     nombre:"alimento_cachorro_todostamaños",
@@ -44,7 +48,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_cachorro_todostamaños.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+    tipo: "alimento",
+    animal:"perro",
 },
 {
     nombre:"alimento_adulto_mayor_pequeño",
@@ -53,7 +58,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_adulto_mayor_pequeño.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+    tipo: "alimento",
+    animal:"perro",
 },
 {
     nombre:"alimento_cachorro_grande",
@@ -62,7 +68,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_cachorro_grande.jpg",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+    tipo: "alimento",
+    animal:"perro",
 },
 {
     nombre:"alimento_adulto_mayor_mediano",
@@ -71,7 +78,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_adulto_mayor_mediano.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+    tipo: "alimento",
+    animal:"perro",
 },
 {
     nombre:"alimento_adulto_mediano",
@@ -80,7 +88,8 @@ const ofertas = [
     precioActual:"600",
     imagen: "img/alimento_adulto_mediano.png",
     enlace:"producto.html",
-    tipo: "alimento_perro"
+   tipo: "alimento",
+    animal:"perro",
 },
 
 
