@@ -8,6 +8,8 @@ const productos = [
     enlace:"producto.html",
     tipo: "alimento",
     animal:"perro",
+    edad:"mayor",
+    tamano:["mediano","grande"]
   
     
 },
@@ -19,7 +21,9 @@ const productos = [
     imagen: "img/alimento_adulto_todostamaños.png",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad: "adulto",
+    tamano: ["pequeño", "mediano", "grande"]
 },
 {
     nombre:"alimento_cachorro_mediano_grande",
@@ -28,7 +32,9 @@ const productos = [
     imagen: "img/alimento_cachorro_mediano_grande.png",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad: "cachorro",
+    tamano:["mediano","grande"]
 },
 {
     nombre:"alimento_cachorro_pequeño",
@@ -37,7 +43,10 @@ const productos = [
     imagen: "img/alimento_cachorro_pequeño.png",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad:"cachorro",
+    tamano: ["pequeño"]
+
 },
 {
     nombre:"alimento_cachorro_todostamaños",
@@ -46,7 +55,9 @@ const productos = [
     imagen: "img/alimento_cachorro_todostamaños.png",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad:"cachorro",
+    tamano: ["pequeño", "mediano", "grande"]
 },
 {
     nombre:"alimento_adulto_mayor_pequeño",
@@ -55,7 +66,9 @@ const productos = [
     imagen: "img/alimento_adulto_mayor_pequeño.png",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad:"mayor",
+    tamano: ["pequeño"]
 },
 {
     nombre:"alimento_cachorro_grande",
@@ -64,7 +77,9 @@ const productos = [
     imagen: "img/alimento_cachorro_grande.jpg",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad:"cachorro",
+    tamano: ["grande"]
 },
 {
     nombre:"alimento_adulto_mayor_mediano",
@@ -73,7 +88,9 @@ const productos = [
     imagen: "img/alimento_adulto_mayor_mediano.png",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad:"mayor",
+    tamano: ["mediano"]
 },
 {
     nombre:"alimento_adulto_mediano",
@@ -82,7 +99,9 @@ const productos = [
     imagen: "img/alimento_adulto_mediano.png",
     enlace:"producto.html",
     tipo: "alimento",
-    animal:"perro"
+    animal:"perro",
+    edad:"adulto",
+    tamano: ["mediano"]
 },
 
 
