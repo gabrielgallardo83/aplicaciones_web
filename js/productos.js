@@ -128,5 +128,31 @@ productos.forEach(producto => {
 })
 
 
+const api_token = 'patOlS7JsY5IwRZbo.4ed56b02ababa76df4bc61f96f8106d42b1245d0652a50e536aa8297af9c223f';
+const base_id ='app6LcwG36qMbO4U9';
+const tableName ='productos';
 
-})
+
+const airtableURL =`https://api.airtable.com/v0/${base_id}/${tableName}`;
+
+async function fetchAirtableData() {
+    try {
+        const response = await fetch(airtableURL, {
+            headers : {
+                "Authorization": `Bearer ${api_token}`,
+                "Content-Type": "application/json"
+               
+    }
+
+});
+        const data = await response.json();
+        console.log('productos de Airtable:', data);
+}
+    catch (error) {
+        console.error('Error al obtener datos de Airtable:', error);
+    }
+
+}
+fetchAirtableData();
+
+});
