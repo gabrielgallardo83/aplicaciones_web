@@ -180,15 +180,15 @@ const contenedor = document.getElementById("productos-container");
         const producto = record.fields; // busco los campos reales en record.fields que es como estan en airtable
 
         const card = document.createElement("a");
-        card.href = producto.enlace || "#"; // por si se rompe el enlace
+        card.href = producto.enlace; 
 
         card.innerHTML = `
           <article class="producto">
-            <img src="${producto.imagen?.[0]?.url || "img/no-image.jpg"}" alt="${producto.nombre || "Sin nombre"}">
+            <img src="${producto.imagen?.[0]?.url}" alt="${producto.nombre}">
             <div class="producto-info">
-              <h3>${producto.nombre || "Producto sin nombre"}</h3>
-              <p>${producto.descripcion || ""}</p>
-              <span class="precio">$${producto.precio || "—"}</span>
+              <h3>${producto.nombre}</h3>
+              <p>${producto.descripcion}</p>
+              <span class="precio">$${producto.precio}</span>
             </div>
           </article>
         `;
