@@ -5,7 +5,7 @@ const tableName ='productos';
 
 
 const airtableURL =`https://api.airtable.com/v0/${base_id}/${tableName}`;
-
+/*
 const productos = [
 {
     nombre:"alimento_adulto_mayor_medianos_grandes",
@@ -156,5 +156,52 @@ async function fetchAirtableData() {
 
 }
 fetchAirtableData();
+*/
+const contenedor = document.getElementById("productos-container");
+
+// con esta funcion me traigo y muestro los datos desde airtable
+  async function fetchAirtableData() {
+    try {
+      const response = await fetch(airtableURL, {
+        headers: {
+          "Authorization": `Bearer ${api_token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await response.json();
+      console.log("Productos desde Airtable:", data);
+
+      // esto limpia el contenedor antes de agregar nuevos productos
+      contenedor.innerHTML = "";
+
+      // Itera sobre los registros de Airtable
+      data.records.forEach((record) => {
+        const producto = record.fields; // busco los campos reales en record.fields que es como estan en airtable
+
+        const card = document.createElement("a");
+        card.href = producto.enlace || "#"; // por si se rompe el enlace
+
+        card.innerHTML = `
+          <article class="producto">
+            <img src="${producto.imagen?.[0]?.url || "img/no-image.jpg"}" alt="${producto.nombre || "Sin nombre"}">
+            <div class="producto-info">
+              <h3>${producto.nombre || "Producto sin nombre"}</h3>
+              <p>${producto.descripcion || ""}</p>
+              <span class="precio">$${producto.precio || "—"}</span>
+            </div>
+          </article>
+        `;
+
+        contenedor.appendChild(card);
+      });
+    } catch (error) {
+      console.error("Error al obtener datos de Airtable:", error);
+      contenedor.innerHTML = "<p>Error al cargar los productos.</p>";
+    }
+  }
+
+  fetchAirtableData();
+
 
 });
