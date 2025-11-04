@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     titulo.textContent = p.nombre || "Sin nombre";
     descripcion.textContent = p.descripcion_detallada || "Sin descripción disponible.";
 
-    // Si querés mostrar más info (precio, tipo, etc.):
+ 
     if (p.precio) {
       const precioEl = document.createElement("span");
       precioEl.classList.add("precio-prod");
