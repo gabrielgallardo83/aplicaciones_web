@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const api_token = 'patOlS7JsY5IwRZbo.4ed56b02ababa76df4bc61f96f8106d42b1245d0652a50e536aa8297af9c223f';
 const base_id ='app6LcwG36qMbO4U9';
-const tableName ='productos';
+const tableName ='ofertas';
 
 
 const airtableURL =`https://api.airtable.com/v0/${base_id}/${tableName}`;
