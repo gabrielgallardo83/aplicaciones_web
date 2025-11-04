@@ -26,10 +26,11 @@
       </ul>
     </nav>
     <div class="carrito">
-   <a href="carrito.html">
-        <span class="material-symbols-outlined">shopping_cart</span>
-      </a>
-  </div>
+  <a href="carrito.html" class="carrito-icono">
+    <span class="material-symbols-outlined">shopping_cart</span>
+    <span class="carrito-contador">0</span>
+  </a>
+</div>
   </header>
 
 
@@ -48,7 +49,7 @@
       <form id="form-carrito" action="carrito.html" method="get">
         <label for="cantidad">Cantidad:</label>
         <input type="number" id="cantidad" name="cantidad" value="1" min="1">
-        <button type="submit">Agregar al carrito</button>
+        
       </form>
     </div>
   </section>
@@ -76,5 +77,6 @@
     </div>
   </footer>
 <script src="js/producto.js"></script>
+<script src="js/cartCount.js"></script>
 </body>
 </html>
