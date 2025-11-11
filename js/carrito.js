@@ -7,16 +7,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // boton vaciar
   const btnVaciar = document.createElement("button");
-  btnVaciar.textContent = "Vaciar carrito 🗑️";
+  btnVaciar.textContent = "Vaciar carrito ";
   btnVaciar.classList.add("btn-vaciar");
   document.querySelector(".carrito-main").insertBefore(btnVaciar, document.querySelector(".carrito-total"));
+
+
+
+  // armo el modal
+  const modalHTML = `
+    <div id="modal-confirmacion" class="modal hidden">
+      <div class="modal-content">
+        <h3>¿Seguro que deseas vaciar el carrito?</h3>
+        <p>Se eliminarán todos los productos agregados.</p>
+        <div class="modal-buttons">
+          <button id="confirmar-vaciar" class="btn btn-confirmar">Sí, vaciar</button>
+          <button id="cancelar-vaciar" class="btn btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+  const modal = document.getElementById("modal-confirmacion");
+  const btnConfirmar = document.getElementById("confirmar-vaciar");
+  const btnCancelar = document.getElementById("cancelar-vaciar");
+
+  // muestro el modal para vaciar
+  btnVaciar.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
+
+  // confirmo vaciar
+  btnConfirmar.addEventListener("click", () => {
+    carrito = [];
+    localStorage.removeItem("carrito");
+    renderCarrito();
+    if (window.actualizarContadorCarrito) window.actualizarContadorCarrito();
+    modal.classList.add("hidden");
+  });
+
+  //  cancelo vaciar
+  btnCancelar.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
 
   // renderizo los productos del carrito
   function renderCarrito() {
     tbody.innerHTML = "";
 
     if (carrito.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="5">Tu carrito está vacío 🛒</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="5">Tu carrito está vacío </td></tr>`;
       totalEl.textContent = "Total: $0";
       if (window.actualizarContadorCarrito) window.actualizarContadorCarrito();
       return;
@@ -72,14 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Vacío el carrito
-  btnVaciar.addEventListener("click", () => {
-    if (confirm("¿Seguro que deseas vaciar todo el carrito?")) {
-      carrito = [];
-      localStorage.removeItem("carrito");
-      renderCarrito();
-    }
-  });
+  
 
   // Inicializo 
   renderCarrito();

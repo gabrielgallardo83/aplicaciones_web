@@ -650,6 +650,96 @@ td .btn-eliminar:hover {
 }
 
 
+.btn-vaciar {
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-vaciar:hover {
+  background-color: #e43d3d;
+}
+
+
+/* ---------- MODAL DE CONFIRMACIÓN ---------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-buttons .btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-confirmar {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn-confirmar:hover {
+  background-color: #c9302c;
+}
+
+.btn-cancelar {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancelar:hover {
+  background-color: #cfcfcf;
+}
+
 @media (max-width: 1024px) {
  
   nav ul {
