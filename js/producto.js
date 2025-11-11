@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  let productoActual = null; // 👉 guardamos aquí el producto cargado
+  let productoActual = null; //  guardamos aquí el producto cargado
 
   try {
     // Llamada a Airtable para ese producto específico
@@ -111,16 +111,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       infoContainer.appendChild(precioEl);
     }
 
-    // ✳️ Agregar botón "Agregar al carrito" si no existe
+    //  Agregar botón "Agregar al carrito" si no existe
     let btnAgregar = document.getElementById("agregar-carrito");
     if (!btnAgregar) {
       btnAgregar = document.createElement("button");
       btnAgregar.id = "agregar-carrito";
-      btnAgregar.textContent = "Agregar al carrito 🛒";
+      btnAgregar.textContent = "Agregar al carrito ";
       infoContainer.appendChild(btnAgregar);
     }
 
-    // ✳️ Evento para agregar al carrito
+    //  Evento para agregar al carrito
     btnAgregar.addEventListener("click", () => {
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
       const existente = carrito.find(item => item.id === productoActual.id);
@@ -134,16 +134,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       localStorage.setItem("carrito", JSON.stringify(carrito));
       if (window.actualizarContadorCarrito) window.actualizarContadorCarrito();
 
-      // ✳️ Animación o feedback visual
+      //  Animación o feedback visual
       btnAgregar.classList.add("agregado");
       btnAgregar.textContent = "✅ Agregado!";
       setTimeout(() => {
         btnAgregar.classList.remove("agregado");
-        btnAgregar.textContent = "Agregar al carrito 🛒";
+        btnAgregar.textContent = "Agregar al carrito ";
       }, 1500);
     });
 
-    // ✳️ Animación suave al cargar la info
+    // Animación suave al cargar la info
     const main = document.querySelector(".producto-main");
     main.style.opacity = 0;
     main.style.transition = "opacity 0.8s ease";

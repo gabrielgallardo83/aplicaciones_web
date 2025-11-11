@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABM de Productos</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fafafa;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    button {
+      padding: 6px 10px;
+      margin: 2px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-editar {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-eliminar {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+    }
+
+    input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn-guardar {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .form-container {
+      margin-top: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gestión de Productos</h1>
+
+  <table id="tabla-productos">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Productos cargados dinámicamente -->
+    </tbody>
+  </table>
+
+  <div class="form-container">
+    <h2 id="form-titulo">Agregar nuevo producto</h2>
+    <form id="form-producto">
+      <input type="hidden" id="producto-id">
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <textarea id="descripcion" placeholder="Descripción"></textarea>
+      <input type="number" id="precio" placeholder="Precio" required>
+      <button type="submit" class="btn-guardar">Guardar</button>
+    </form>
+  </div>
+
+  <script src="js/abm.js"></script>
+</body>
+</html>
