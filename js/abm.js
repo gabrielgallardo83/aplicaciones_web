@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabla = document.querySelector("#tabla-productos tbody");
   const modal = document.getElementById("modal-producto");
   const form = document.getElementById("form-producto");
-  const btnNuevo = document.getElementById("btn-nuevo");
+  const btnNuevo = document.getElementById("btn-agregar");
   const btnCancelar = document.getElementById("cancelar-modal");
   const modalTitle = document.getElementById("modal-title");
 
