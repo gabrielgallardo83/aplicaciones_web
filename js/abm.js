@@ -206,6 +206,21 @@ if (archivo && archivo.size > 0) {
   }
 
   
+  function mostrarNotificacion(mensaje, tipo = "info") {
+  const notificacion = document.getElementById("notificacion");
+  const msg = document.getElementById("notificacion-mensaje");
+
+  msg.textContent = mensaje;
+
+  notificacion.className = `notificacion ${tipo}`;
+  notificacion.classList.remove("hidden");
+  setTimeout(() => notificacion.classList.add("show"), 10);
+
+  setTimeout(() => {
+    notificacion.classList.remove("show");
+    setTimeout(() => notificacion.classList.add("hidden"), 400);
+  }, 3000);
+}
 
 
 
