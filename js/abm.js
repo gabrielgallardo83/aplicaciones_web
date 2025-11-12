@@ -14,6 +14,27 @@ document.addEventListener("DOMContentLoaded", () => {
   let productos = [];
   let editarId = null;
 
+//para subir imagenes a airtable
+async function uploadToImgBB(file) {
+  const apiKey = "7f5c4d43cc2e8e9dd86840250c39ec77"; 
+  const formData = new FormData();
+  formData.append("image", file);
+
+  const res = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
+    method: "POST",
+    body: formData,
+  });
+
+  const data = await res.json();
+  if (!data.success) throw new Error("Error al subir la imagen a ImgBB");
+  return data.data.url; // devuelve la URL pública
+}
+
+
+
+
+
+
   // me traigo los productos
   async function fetchProductos() {
     try {
@@ -97,18 +118,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // imagen
 
-    
-/*    const archivo = formData.get("imagen");
-    if (archivo && archivo.size > 0) {
-      const base64 = await toBase64(archivo);
-      data.fields.imagen = [{ url: base64 }];
-    }
-*/
+  const archivo = formData.get("imagen");
+if (archivo && archivo.size > 0) {
+  try {
+    const imageUrl = await uploadToImgBB(archivo);
+    data.fields.imagen = [{ url: imageUrl }];
+  } catch (error) {
+    console.error("Error subiendo imagen:", error);
+    alert("No se pudo subir la imagen. Verificá tu conexión o API key.");
+    return;
+  }
+}
     
 
     try {
 
-      console.log("DATA ENVIADA A AIRTABLE:", JSON.stringify(data, null, 2));
+      console.log("DATA ENVIADA A AIRTABLE:", JSON.stringify(data, null, 2));  // debugeando el formulario de creacion de productos
       if (editarId) {
         // Editar
         await fetch(`${airtableURL}/${editarId}`, {
