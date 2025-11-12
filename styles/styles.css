@@ -974,6 +974,66 @@ td .btn-eliminar:hover {
   border-left: 5px solid #ff9800;
 }
 
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff8e1;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 16px 20px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.toast-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.toast .btn-confirmar {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toast .btn-confirmar:hover {
+  background: #c0392b;
+}
+
+.toast .btn-cancelar {
+  background: #bdc3c7;
+  color: #333;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toast .btn-cancelar:hover {
+  background: #95a5a6;
+}
+
 @media (max-width: 1024px) {
  
   nav ul {

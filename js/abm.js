@@ -163,9 +163,13 @@ if (archivo && archivo.size > 0) {
   });
 
   //  Editar 
-  tabla.addEventListener("click", (e) => {
-    if (e.target.closest(".btn-editar")) {
-      const id = e.target.closest(".btn-editar").dataset.id;
+   tabla.addEventListener("click", (e) => {
+    const btnEditar = e.target.closest(".btn-editar");
+    const btnEliminar = e.target.closest(".btn-eliminar");
+
+   
+    if (btnEditar) {
+      const id = btnEditar.dataset.id;
       editarId = id;
       const p = productos.find(p => p.id === id).fields;
 
@@ -184,46 +188,62 @@ if (archivo && archivo.size > 0) {
       modal.classList.remove("hidden");
     }
 
-    if (e.target.closest(".btn-eliminar")) {
-      const id = e.target.closest(".btn-eliminar").dataset.id;
-      if (confirm("¿Desea eliminar este producto?")) {
-        fetch(`${airtableURL}/${id}`, {
-          method: "DELETE",
-          headers: { "Authorization": `Bearer ${api_token}` }
-        }).then(() => fetchProductos());
-      }
+    // Eliminar
+    if (btnEliminar) {
+      const id = btnEliminar.dataset.id;
+      mostrarToastConfirmacion(id);
     }
   });
 
-  // para subir la imagen en base64 
-  function toBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
+  // Toast de confirmación de eliminación
+  function mostrarToastConfirmacion(id) {
+    const toast = document.getElementById("toast-confirmacion");
+    const btnConfirmar = document.getElementById("toast-confirmar");
+    const btnCancelar = document.getElementById("toast-cancelar");
+
+    toast.classList.remove("hidden");
+    setTimeout(() => toast.classList.add("show"), 10);
+
+    const cerrarToast = () => {
+      toast.classList.remove("show");
+      setTimeout(() => toast.classList.add("hidden"), 400);
+    };
+
+    btnCancelar.onclick = cerrarToast;
+
+    btnConfirmar.onclick = async () => {
+      try {
+        await fetch(`${airtableURL}/${id}`, {
+          method: "DELETE",
+          headers: { "Authorization": `Bearer ${api_token}` }
+        });
+        cerrarToast();
+        fetchProductos();
+        mostrarNotificacion("Producto eliminado correctamente", "exito");
+      } catch (error) {
+        cerrarToast();
+        mostrarNotificacion("Error al eliminar el producto", "error");
+      }
+    };
   }
 
-  
+  //  Notificación tipo toast
   function mostrarNotificacion(mensaje, tipo = "info") {
-  const notificacion = document.getElementById("notificacion");
-  const msg = document.getElementById("notificacion-mensaje");
+    const notificacion = document.getElementById("notificacion");
+    const msg = document.getElementById("notificacion-mensaje");
 
-  msg.textContent = mensaje;
+    msg.textContent = mensaje;
 
-  notificacion.className = `notificacion ${tipo}`;
-  notificacion.classList.remove("hidden");
-  setTimeout(() => notificacion.classList.add("show"), 10);
+    notificacion.className = `notificacion ${tipo}`;
+    notificacion.classList.remove("hidden");
+    setTimeout(() => notificacion.classList.add("show"), 10);
 
-  setTimeout(() => {
-    notificacion.classList.remove("show");
-    setTimeout(() => notificacion.classList.add("hidden"), 400);
-  }, 3000);
-}
+    setTimeout(() => {
+      notificacion.classList.remove("show");
+      setTimeout(() => notificacion.classList.add("hidden"), 400);
+    }, 3000);
+  }
 
-
-
-  // Inicializar
+  //  Inicializar
   fetchProductos();
 });
