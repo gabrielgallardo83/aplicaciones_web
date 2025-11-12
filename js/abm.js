@@ -96,13 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // imagen
+
+    
     const archivo = formData.get("imagen");
     if (archivo && archivo.size > 0) {
       const base64 = await toBase64(archivo);
       data.fields.imagen = [{ url: base64 }];
     }
 
+    
+
     try {
+
+      console.log("DATA ENVIADA A AIRTABLE:", JSON.stringify(data, null, 2));
       if (editarId) {
         // Editar
         await fetch(`${airtableURL}/${editarId}`, {
@@ -174,26 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-    //debugging de error al intentar crear un producto
-    async function guardarProducto(formData) {
-  const res = await fetch(airtableURL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${api_token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ fields }),
-  });
+  
 
-  if (!res.ok) {
-    const errData = await res.json();
-    console.error("Error al guardar producto:", errData);
-  } else {
-    console.log("Producto guardado correctamente");
-  }
-}
 
-guardarProducto(formData);
 
   // Inicializar
   fetchProductos();
