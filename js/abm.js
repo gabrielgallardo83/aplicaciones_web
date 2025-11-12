@@ -35,22 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const fields = p.fields;
       const tr = document.createElement("tr");
       tr.innerHTML = `
-        <td>${fields.nombre || ""}</td>
-        <td>${fields.tipo || ""}</td>
-        <td>${fields.animal || ""}</td>
-        <td>${fields.edad ? fields.edad.join(", ") : ""}</td>
-        <td>${fields.tamano ? fields.tamano.join(", ") : ""}</td>
-        <td>${fields.precio || ""}</td>
-        <td>${fields.precio_oferta || ""}</td>
-        <td>${fields.stock || ""}</td>
-        <td>${fields.descripcion || ""}</td>
-        <td>${fields.descripcion_detallada || ""}</td>
-        <td>${fields.imagen?.[0]?.url ? `<img src="${fields.imagen[0].url}" width="60">` : ""}</td>
-        <td>
-          <button class="btn-editar" data-id="${p.id}"><i class="fas fa-edit"></i></button>
-          <button class="btn-eliminar" data-id="${p.id}"><i class="fas fa-trash-alt"></i></button>
-        </td>
-      `;
+  <td>${fields.imagen?.[0]?.url ? `<img src="${fields.imagen[0].url}" width="60" alt="imagen producto">` : ""}</td>
+  <td>${fields.nombre || ""}</td>
+  <td>${fields.tipo || ""}</td>
+  <td>${fields.animal || ""}</td>
+  <td>${fields.edad ? fields.edad.join(", ") : ""}</td>
+  <td>${fields.tamano ? fields.tamano.join(", ") : ""}</td>
+  <td>${fields.precio || ""}</td>
+  <td>${fields.precio_oferta || ""}</td>
+  <td>${fields.stock || ""}</td>
+  <td>
+    <button class="btn-editar" data-id="${p.id}">
+      <i class="fas fa-edit"></i>
+    </button>
+    <button class="btn-eliminar" data-id="${p.id}">
+      <i class="fas fa-trash-alt"></i>
+    </button>
+  </td>
+`;
       tabla.appendChild(tr);
     });
   }
@@ -88,6 +90,16 @@ document.addEventListener("DOMContentLoaded", () => {
         enlace: "producto.html"
       }
     };
+
+
+    //debugging de error al intentar crear un producto
+    const res = await fetch(airtableURL, { ... });
+
+if (!res.ok) {
+  const errData = await res.json();
+  console.error("Error al guardar producto:", errData);
+}
+
 
     // imagen
     const archivo = formData.get("imagen");
@@ -167,6 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
       reader.onerror = error => reject(error);
     });
   }
+
+  
 
   // Inicializar
   fetchProductos();
