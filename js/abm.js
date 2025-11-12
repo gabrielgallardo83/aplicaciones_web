@@ -92,13 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    //debugging de error al intentar crear un producto
-    const res = await fetch(airtableURL, { ... });
-
-if (!res.ok) {
-  const errData = await res.json();
-  console.error("Error al guardar producto:", errData);
-}
+  
 
 
     // imagen
@@ -180,7 +174,26 @@ if (!res.ok) {
     });
   }
 
-  
+    //debugging de error al intentar crear un producto
+    async function guardarProducto(formData) {
+  const res = await fetch(airtableURL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${api_token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ fields }),
+  });
+
+  if (!res.ok) {
+    const errData = await res.json();
+    console.error("Error al guardar producto:", errData);
+  } else {
+    console.log("Producto guardado correctamente");
+  }
+}
+
+guardarProducto(formData);
 
   // Inicializar
   fetchProductos();
