@@ -98,12 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // imagen
 
     
-    const archivo = formData.get("imagen");
+/*    const archivo = formData.get("imagen");
     if (archivo && archivo.size > 0) {
       const base64 = await toBase64(archivo);
       data.fields.imagen = [{ url: base64 }];
     }
-
+*/
     
 
     try {

@@ -52,25 +52,25 @@
       <h3 id="modal-title">Agregar Producto</h3>
       <form id="form-producto">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" required>
+        <input type="text" name="nombre" id="nombre" required>
 
         <label for="imagen">Imagen</label>
-        <input type="file" id="imagen" accept="image/*">
+        <input type="file" name="imagen" id="imagen" accept="image/*">
 
         <label for="descripcion">Descripción</label>
-        <textarea id="descripcion" rows="2"></textarea>
+        <textarea id="descripcion" name=descripcion"" rows="2"></textarea>
 
         <label for="descripcion_detallada">Descripción Detallada</label>
-        <textarea id="descripcion_detallada" rows="3"></textarea>
+        <textarea id="descripcion_detallada" name="descripcion_detallada" rows="3"></textarea>
 
         <label for="precio">Precio</label>
-        <input type="number" id="precio" step="0.01" required>
+        <input type="number" id="precio" name="precio" step="0.01" required>
 
         <label for="precio_oferta">Precio Oferta</label>
-        <input type="number" id="precio_oferta" step="0.01">
+        <input type="number" id="precio_oferta" name="precio_oferta" step="0.01">
 
         <label for="tipo">Tipo</label>
-        <select id="tipo" required>
+        <select id="tipo" name="tipo" required>
           <option value="">Seleccionar</option>
           <option value="alimento">Alimento</option>
           <option value="accesorio">Accesorio</option>
@@ -79,14 +79,14 @@
         </select>
 
         <label for="animal">Animal</label>
-        <select id="animal" required>
+        <select id="animal" name="animal" required>
           <option value="">Seleccionar</option>
           <option value="perro">Perro</option>
           <option value="gato">Gato</option>
         </select>
 
         <label for="edad">Edad</label>
-        <select id="edad" required>
+        <select id="edad" name="edad" required>
           <option value="">Seleccionar</option>
           <option value="cachorro">Cachorro</option>
           <option value="adulto">Adulto</option>
@@ -95,7 +95,7 @@
         </select>
 
         <label for="tamano">Tamaño</label>
-        <select id="tamano" required>
+        <select id="tamano" name="tamano" required>
           <option value="">Seleccionar</option>
           <option value="pequeno">Pequeño</option>
           <option value="mediano">Mediano</option>
@@ -104,7 +104,7 @@
         </select>
 
         <label for="stock">Stock</label>
-        <input type="number" id="stock" required>
+        <input type="number" name="stock" id="stock" required>
 
         <div class="modal-buttons">
           <button type="submit" class="btn btn-confirmar">Guardar</button>
