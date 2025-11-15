@@ -131,6 +131,16 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProductos(productos);
   }); */
 
+  filtroForm.addEventListener("reset", () => {
+  buscadorInput.value = "";
+  filtroForm.querySelectorAll("select[multiple]").forEach(sel => {
+        sel.selectedIndex = -1;
+    });
+    renderProductos(productos);
+});
+  
+
+
   buscadorForm.addEventListener("submit", e => {
     e.preventDefault();
     aplicarFiltros();
