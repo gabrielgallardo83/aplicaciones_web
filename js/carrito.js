@@ -114,6 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 
-  // Inicializo 
+  
   renderCarrito();
 });

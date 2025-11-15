@@ -973,7 +973,8 @@ td .btn-eliminar:hover {
   display: none;
 }
 
-/* Colores según tipo */
+
+
 .notificacion.exito {
   border-left: 5px solid #4CAF50;
 }
@@ -1160,7 +1161,7 @@ header .logo h1{
     display: none;
   }
 
-  /* Ajustes visuales */
+
   table.abm-tabla th,
   table.abm-tabla td {
     font-size: 14px;
@@ -1179,7 +1180,7 @@ header .logo h1{
     border-collapse: collapse;
   }
 
-  /* Botones más compactos */
+  
   .btn-editar, .btn-eliminar {
     font-size: 14px;
     padding: 4px 6px;

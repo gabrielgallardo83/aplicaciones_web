@@ -145,7 +145,7 @@ if (archivo && archivo.size > 0) {
           body: JSON.stringify(data)
         });
       } else {
-        // Crear
+        // crear
         await fetch(airtableURL, {
           method: "POST",
           headers: {
@@ -162,7 +162,7 @@ if (archivo && archivo.size > 0) {
     }
   });
 
-  //  Editar 
+  //  editar 
    tabla.addEventListener("click", (e) => {
     const btnEditar = e.target.closest(".btn-editar");
     const btnEliminar = e.target.closest(".btn-eliminar");
@@ -188,14 +188,14 @@ if (archivo && archivo.size > 0) {
       modal.classList.remove("hidden");
     }
 
-    // Eliminar
+    // eliminar
     if (btnEliminar) {
       const id = btnEliminar.dataset.id;
       mostrarToastConfirmacion(id);
     }
   });
 
-  // Toast de confirmación de eliminación
+  // toast de confirmación de eliminación
   function mostrarToastConfirmacion(id) {
     const toast = document.getElementById("toast-confirmacion");
     const btnConfirmar = document.getElementById("toast-confirmar");
@@ -227,7 +227,7 @@ if (archivo && archivo.size > 0) {
     };
   }
 
-  //  Notificación tipo toast
+  //  notificación tipo toast
   function mostrarNotificacion(mensaje, tipo = "info") {
     const notificacion = document.getElementById("notificacion");
     const msg = document.getElementById("notificacion-mensaje");
@@ -244,6 +244,6 @@ if (archivo && archivo.size > 0) {
     }, 3000);
   }
 
-  //  Inicializar
+
   fetchProductos();
 });

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contenedor = document.getElementById("ofertas-container");
 
-  // Traer y mostrar datos desde Airtable
+  // traigo y muestro datos desde airtable
   async function fetchAirtableData() {
     try {
       const response = await fetch(airtableURL, {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data.records.forEach((record) => {
         const producto = record.fields;
 
-        // 🔹 Usa el ID del registro, no del campo
+        // uso el id del registro, no del campo
         const card = document.createElement("a");
         card.href = `producto.html?id=${record.id}`;
         card.classList.add("producto-card");

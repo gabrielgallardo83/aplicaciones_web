@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (contador) contador.textContent = totalItems;
   }
 
-  // Actualiza al cargar la página
+  // actualiza al cargar la página
   actualizarContador();
 
-  // Escucha cambios en localStorage desde otras páginas
+  // escucha cambios en localStorage desde otras páginas
   window.addEventListener("storage", actualizarContador);
 
-  // Exponer función global (para usar en producto.js)
+  // exponer función global (para usar en producto.js)
   window.actualizarContadorCarrito = actualizarContador;
 });

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const tableName = "productos";
   const airtableURL = `https://api.airtable.com/v0/${base_id}/${tableName}`;
 
-  // Obtener el ID del producto desde la URL
+  // traigo el id del producto desde la URL
   const params = new URLSearchParams(window.location.search);
   const productoId = params.get("id");
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let productoActual = null;
 
   try {
-    // Llamada a Airtable
+    // llamada a airtable
     const response = await fetch(`${airtableURL}/${productoId}`, {
       headers: {
         Authorization: `Bearer ${api_token}`,
@@ -36,19 +36,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       imagen: p.imagen?.[0]?.url || "img/placeholder.png",
     };
 
-    // Elementos del DOM
+    // elementos del dom
     const imgContainer = document.querySelector(".producto-imagen img");
     const titulo = document.querySelector(".producto-info h2");
     const descripcion = document.querySelector(".producto-info p");
     const infoContainer = document.querySelector(".producto-info");
 
-    // Cargar datos
+    // cargo datos
     imgContainer.src = productoActual.imagen;
     imgContainer.alt = productoActual.nombre;
     titulo.textContent = productoActual.nombre;
     descripcion.textContent = productoActual.descripcion;
 
-    // Mostrar precio
+    // muestro precio
     if (productoActual.precio) {
       const precioEl = document.createElement("span");
       precioEl.classList.add("precio-prod");
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       infoContainer.appendChild(precioEl);
     }
 
-    // Botón agregar
+    // botón  para agregar
     let btnAgregar = document.getElementById("agregar-carrito");
     if (!btnAgregar) {
       btnAgregar = document.createElement("button");
@@ -65,10 +65,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       infoContainer.appendChild(btnAgregar);
     }
 
-    // Obtener input de cantidad
+    //  input de cantidad
     const inputCantidad = document.getElementById("cantidad");
 
-    // Evento agregar al carrito
+    //  agregar al carrito
     btnAgregar.addEventListener("click", () => {
       const cantidadSeleccionada = parseInt(inputCantidad.value) || 1;
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (window.actualizarContadorCarrito) window.actualizarContadorCarrito();
 
-      // Feedback visual
+      // confirmación visual
       btnAgregar.classList.add("agregado");
       btnAgregar.textContent = "Agregado!";
       setTimeout(() => {
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }, 1500);
     });
 
-    // Animación al cargar
+    // animación de cargar
     const main = document.querySelector(".producto-main");
     main.style.opacity = 0;
     main.style.transition = "opacity 0.8s ease";

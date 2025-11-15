@@ -1,59 +1,4 @@
-/*document.addEventListener("DOMContentLoaded", () => {
-const api_token = 'patOlS7JsY5IwRZbo.4ed56b02ababa76df4bc61f96f8106d42b1245d0652a50e536aa8297af9c223f';
-const base_id ='app6LcwG36qMbO4U9';
-const tableName ='productos';
 
-
-const airtableURL =`https://api.airtable.com/v0/${base_id}/${tableName}`;
-
-const contenedor = document.getElementById("productos-container");
-
-// con esta funcion me traigo y muestro los datos desde airtable
-  async function fetchAirtableData() {
-    try {
-      const response = await fetch(airtableURL, {
-        headers: {
-          "Authorization": `Bearer ${api_token}`,
-          "Content-Type": "application/json",
-        },
-      });
-
-      const data = await response.json();
-      console.log("Productos desde Airtable:", data);
-
-      // esto limpia el contenedor antes de agregar nuevos productos
-      contenedor.innerHTML = "";
-
-      // Itera sobre los registros de Airtable
-      data.records.forEach((record) => {
-        const producto = record.fields; // busco los campos reales en record.fields que es como estan en airtable
-
-        const card = document.createElement("a");
-        card.href = producto.enlace; 
-
-        card.innerHTML = `
-          <article class="producto">
-            <img src="${producto.imagen?.[0]?.url}" alt="${producto.nombre}">
-            <div class="producto-info">
-              <h3>${producto.nombre}</h3>
-              <p>${producto.descripcion}</p>
-              <span class="precio">$${producto.precio}</span>
-            </div>
-          </article>
-        `;
-
-        contenedor.appendChild(card);
-      });
-    } catch (error) {
-      console.error("Error al obtener datos de Airtable:", error);
-      contenedor.innerHTML = "<p>Error al cargar los productos.</p>";
-    }
-  }
-
-  fetchAirtableData();
-
-
-});*/
 
 document.addEventListener("DOMContentLoaded", () => {
   const api_token = 'patOlS7JsY5IwRZbo.4ed56b02ababa76df4bc61f96f8106d42b1245d0652a50e536aa8297af9c223f';
@@ -68,18 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let productos = [];
 
-  // ---------- Función para normalizar texto ----------
+  //   para normalizar texto 
   function normalizarTexto(texto) {
     return String(texto || "")
       .toLowerCase()
-      .normalize("NFD") // elimina tildes
+      .normalize("NFD") // elimina acentos
       .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[-_]+/g, " ") // convierte guiones o guiones bajos a espacios
+      .replace(/[-_]+/g, " ") // convierte guiones o guiones bajos en espacios
       .replace(/\s+/g, " ")   // colapsa múltiples espacios
       .trim();
   }
 
-  // ---------- Función para normalizar campos tipo array ----------
+  //  para normalizar campos tipo array 
   function normalizeToArray(value) {
     if (!value) return [];
     if (Array.isArray(value)) {
@@ -88,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return [normalizarTexto(value)];
   }
 
-  // ---------- Traer productos desde Airtable ----------
+  // traer productos desde airtable 
   async function fetchAirtableData() {
     try {
       const response = await fetch(airtableURL, {
@@ -111,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Ejemplo de producto:", productos[0]);
   }
 
-  // ---------- Renderizar productos ----------
+  // renderizo productos 
   function renderProductos(lista) {
     contenedor.innerHTML = "";
     if (!lista || lista.length === 0) {
@@ -145,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ---------- Función de filtros y búsqueda ----------
+  //  filtros y búsqueda 
   function aplicarFiltros() {
     const busqueda = normalizarTexto(buscadorInput.value);
     const tipoFiltro = normalizarTexto(filtroForm.tipo.value);
@@ -173,18 +118,18 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProductos(filtrados);
   }
 
-  // ---------- Eventos ----------
+  //  eventos
   filtroForm.addEventListener("submit", e => {
     e.preventDefault();
     aplicarFiltros();
   });
 
-  filtroForm.addEventListener("reset", e => {
+ /* filtroForm.addEventListener("reset", e => {
     e.preventDefault();
     filtroForm.reset();
     buscadorInput.value = "";
     renderProductos(productos);
-  });
+  }); */
 
   buscadorForm.addEventListener("submit", e => {
     e.preventDefault();
@@ -195,6 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     aplicarFiltros();
   });
 
-  // ---------- Inicializar ----------
+
   fetchAirtableData();
 });
