@@ -124,12 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aplicarFiltros();
   });
 
- /* filtroForm.addEventListener("reset", e => {
-    e.preventDefault();
-    filtroForm.reset();
-    buscadorInput.value = "";
-    renderProductos(productos);
-  }); */
+ 
 
   filtroForm.addEventListener("reset", () => {
   buscadorInput.value = "";
