@@ -1144,6 +1144,46 @@ header .logo h1{
   .carrito-total {
     justify-content: center;
   }
+
+   table.abm-tabla th:nth-child(3),
+  table.abm-tabla td:nth-child(3),
+  table.abm-tabla th:nth-child(4),
+  table.abm-tabla td:nth-child(4),
+  table.abm-tabla th:nth-child(5),
+  table.abm-tabla td:nth-child(5),
+  table.abm-tabla th:nth-child(6),
+  table.abm-tabla td:nth-child(6),
+  table.abm-tabla th:nth-child(8),
+  table.abm-tabla td:nth-child(8),
+  table.abm-tabla th:nth-child(9),
+  table.abm-tabla td:nth-child(9) {
+    display: none;
+  }
+
+  /* Ajustes visuales */
+  table.abm-tabla th,
+  table.abm-tabla td {
+    font-size: 14px;
+    padding: 6px;
+    text-align: center;
+  }
+
+  table.abm-tabla img {
+    width: 60px;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  table.abm-tabla {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Botones más compactos */
+  .btn-editar, .btn-eliminar {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
 }
 
 
